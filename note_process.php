@@ -14,6 +14,7 @@ $phone_num = $_POST['note'];
     if($checkQueryResultCount > 0){
         $query = "INSERT INTO `note_table` (`contact_name`, `phone_number`, `user_id`) VALUES ('$contact_name','$phone_num', $id)";
         $added = $connection->query($query);
+        $_SESSION['success'] = 'added successfully';
         header("location:dashboard.php");
     }else{
         echo "error";
